@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+}
+
+body {
+    background: linear-gradient(90deg, rgb(47, 150, 163), rgb(48, 62, 143));
+    color: white;
+    font-family: 'Lato', sans-serif;
+
+    #root {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}

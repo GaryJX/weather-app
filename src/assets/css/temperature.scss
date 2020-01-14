@@ -1,0 +1,23 @@
+.temperature {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    &--degree {
+        display: flex;
+        align-items: center;
+        cursor: pointer; 
+
+        .degree-num {
+            font-size: 4rem;
+        }
+
+        .degree-type {
+            margin: 1rem;
+            font-size: 3rem;
+        }
+    }
+}
