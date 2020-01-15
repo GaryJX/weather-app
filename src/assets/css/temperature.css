@@ -19,11 +19,6 @@
   cursor: pointer;
 }
 
-.temperature--degree:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
 .temperature--degree .current-temp {
   display: -webkit-box;
   display: -ms-flexbox;

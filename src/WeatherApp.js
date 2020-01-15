@@ -116,7 +116,7 @@ export default class WeatherApp extends React.Component {
     } else if (this.state.noSearchTarget) {
       return null;
     } else if (this.state.loading) {
-      return <img src={require("./assets/images/loading.svg")}/>
+      return <img className='loading' src={require("./assets/images/loading.svg")}/>
     } else {
       return (
         <>
@@ -141,10 +141,14 @@ export default class WeatherApp extends React.Component {
   logo = () => {
     const logoClass = this.state.searchBarClass === '' ? 'hidden' : '';
     return (
-      <div className={`logo ${logoClass}`}>
+      <div className={`logo ${logoClass}`} onClick={this.resetSearch}>
         <span className='wi wi-day-lightning'></span>
       </div>
     );
+  }
+
+  resetSearch = () => {
+    this.setState({ noSearchTarget: true, searchBarClass: '', errorMessage: '' });
   }
 
   render() {

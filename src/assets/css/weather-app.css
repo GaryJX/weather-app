@@ -72,7 +72,12 @@
   pointer-events: none;
 }
 
-.wi {
+.header-container .header .wi {
+  font-size: 4rem;
+  padding-bottom: 2rem;
+}
+
+.weather-logo {
   font-size: 4rem;
   padding-bottom: 2rem;
 }
@@ -83,5 +88,68 @@
   font-weight: 700;
   line-height: 2;
   font-family: 'Lato', sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  .header .wi, .header h1 {
+    font-size: 2.5rem !important;
+  }
+  .error-message {
+    font-size: 1.7rem;
+  }
+  .header-container.align-top {
+    height: 100vh;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .header-container .search-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header-container .search-bar input {
+    margin-bottom: 2rem;
+    margin-left: 0 !important;
+  }
+  .location {
+    padding-bottom: 3rem !important;
+  }
+  .location h1 {
+    font-size: 2rem;
+  }
+  .weather-logo {
+    font-size: 2rem;
+  }
+  .temperature h2 {
+    font-size: 3rem !important;
+  }
+  .temperature h3 {
+    font-size: 2rem !important;
+  }
+  .loading {
+    height: 5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .temperature--degree:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 /*# sourceMappingURL=weather-app.css.map */

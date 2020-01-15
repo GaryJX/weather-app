@@ -21,7 +21,7 @@ export default function WeatherIcon(props) {
         return null;
     } else {
         return (
-            <span className={`wi ${iconClass}`}/>
+            <span className={`weather-logo wi ${iconClass}`}/>
         );
     }
 }
