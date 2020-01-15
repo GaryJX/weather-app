@@ -14,7 +14,8 @@
 }
 
 body {
-    background: linear-gradient(90deg, rgb(47, 150, 163), rgb(48, 62, 143));
+    background: linear-gradient(90deg, rgba(47, 150, 163, 0.8), rgba(48, 62, 143, 0.8)), url('../images/mountains.jpg');
+    background-size: 100vw 100vh;
     color: white;
     font-family: 'Lato', sans-serif;
 

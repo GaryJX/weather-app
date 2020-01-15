@@ -12,6 +12,7 @@ export default function WeatherIcon(props) {
         snow: 'wi-day-snow', 
         clear: 'wi-day-sunny',
         drizzle: 'wi-day-rain',
+        mist: 'wi-day-rain-mix',
     };
 
     const iconClass = mapIcons[icon];

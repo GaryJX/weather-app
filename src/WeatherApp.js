@@ -129,10 +129,31 @@ export default class WeatherApp extends React.Component {
     }
   }
 
+  header = () => {
+    const headerClass = this.state.searchBarClass === '' ? '' : 'hidden';
+    return (
+      <div className={`header ${headerClass}`}>
+          <div className='wi wi-day-lightning'></div>
+          <h1>Weather Buddy</h1>
+      </div>
+    );
+  }
+
+  logo = () => {
+    const logoClass = this.state.searchBarClass === '' ? 'hidden' : '';
+    return (
+      <div className={`logo ${logoClass}`}>
+        <span className='wi wi-day-lightning'></span>
+      </div>
+    );
+  }
+
   render() {
     return (
       <>
-        <div className={`search-bar-container ${this.state.searchBarClass}`}>
+        {this.logo()}
+        <div className={`header-container ${this.state.searchBarClass}`}>
+          {this.header()}
           <SearchBar searchValue={this.state.searchValue} searched={this.state.searched} onSearchHandler={this.handleSearch} />
         </div>
         {this.displayWeatherData()}
