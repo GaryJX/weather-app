@@ -106,7 +106,7 @@ export default class WeatherApp extends React.Component {
   handleSearch = (searchValues) => {
     // ! Proxy just for getting around CORS in dev environment, remove this later
     const proxy = 'https://cors-anywhere.herokuapp.com/'
-    const api_url = `${proxy}${BASE_API_URL}&q=${searchValues.cityValue},${searchValues.countryValue}`;
+    const api_url = `${proxy}${BASE_API_URL}&q=${searchValues.cityValue.trim()},${searchValues.countryValue.trim()}`;
     this.queryAndDisplayWeatherData(api_url);
   }
 
