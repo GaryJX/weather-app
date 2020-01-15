@@ -16,21 +16,57 @@
 }
 
 .temperature--degree {
+  cursor: pointer;
+}
+
+.temperature--degree:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.temperature--degree .current-temp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
+  padding: 2rem;
 }
 
-.temperature--degree .degree-num {
+.temperature--degree .current-temp h2 {
   font-size: 4rem;
 }
 
-.temperature--degree .degree-type {
-  margin: 1rem;
-  font-size: 3rem;
+.temperature--degree .min-max-temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.temperature--degree .min-max-temp .min-temp, .temperature--degree .min-max-temp .max-temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.temperature--degree .min-max-temp .min-temp h3, .temperature--degree .min-max-temp .max-temp h3 {
+  font-size: 2.5rem;
+}
+
+.temperature--description {
+  font-size: 2rem;
+  text-transform: capitalize;
+  padding-top: 3rem;
 }
 /*# sourceMappingURL=temperature.css.map */

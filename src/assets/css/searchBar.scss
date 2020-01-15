@@ -1,0 +1,49 @@
+.search-bar {
+    margin-top: 3rem;
+
+    &.main-search-bar {
+        align-self: top;
+    }
+
+    &--input {
+        padding: 1rem 1.5rem;
+        border-radius: 6px;
+        border: none;
+        border: 1px solid #e6e6e6;
+
+        &.country {
+            margin-left: 1rem;
+        }
+
+        &.error {
+            border: 1px solid #d13b30;
+            color: #d13b30;
+
+            &::placeholder {
+                color: #d13b30;
+            }
+        }
+    }
+
+    // Remove below later
+    &--submit {
+        // display: none;
+
+        margin-left: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        border: 1px solid #4287f5;
+        cursor: pointer;
+
+        background-color: #4287f5;
+        color: white;
+        transition: 0.5s;
+
+        &:hover {
+            color: #4287f5;
+            background-color: white;
+            border: 1px solid #e6e6e6;
+            transform: scale(1.1);
+        }
+    }
+}
