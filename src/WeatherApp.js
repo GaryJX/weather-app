@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './assets/css/weather-app.css';
 import 'weather-icons/css/weather-icons.css'
 import Location from './components/Location'
@@ -13,8 +12,8 @@ import WeatherIcon from './components/WeatherIcon';
 // const API_KEY =  '2c07d9441e6da9251b5e9b6dbca5afe8';
 // const BASE_API_URL = 'https://api.darksky.net/forecast';
 
-// const API_KEY = 'f4251a7e73d6dfe509cd347b0c34b13b';
-const API_KEY = '429736441cf3572838aa10530929f7cd'; // Remove this later, this is someone else's API Key
+const API_KEY = 'f4251a7e73d6dfe509cd347b0c34b13b';
+// const API_KEY = '429736441cf3572838aa10530929f7cd'; // Remove this later, this is someone else's API Key
 const BASE_API_URL = `api.openweathermap.org/data/2.5/weather?APPID=${API_KEY}`;
 
 
