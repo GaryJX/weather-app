@@ -1,5 +1,4 @@
 import React from 'react';
-import {TextField} from '@material-ui/core';
 import '../assets/css/searchBar.css'
 
 export default class SearchBar extends React.Component {

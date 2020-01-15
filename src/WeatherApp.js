@@ -6,16 +6,10 @@ import Temperature from './components/Temperature'
 import SearchBar from './components/SearchBar';
 
 import './assets/css/location.css';
-import TemperatureIcon from './components/WeatherIcon';
 import WeatherIcon from './components/WeatherIcon';
-// TODO: This API Key should be hidden (not in public repos)
-// const API_KEY =  '2c07d9441e6da9251b5e9b6dbca5afe8';
-// const BASE_API_URL = 'https://api.darksky.net/forecast';
 
 const API_KEY = 'f4251a7e73d6dfe509cd347b0c34b13b';
-// const API_KEY = '429736441cf3572838aa10530929f7cd'; // Remove this later, this is someone else's API Key
 const BASE_API_URL = `https://api.openweathermap.org/data/2.5/weather?APPID=${API_KEY}`;
-
 
 export default class WeatherApp extends React.Component {
 
@@ -35,24 +29,20 @@ export default class WeatherApp extends React.Component {
       name: '',
     }
 
-    this.getLocationWeatherData();
+    // this.getLocationWeatherData();
   }
 
-  // Ask the user for their location and display the data for their location if allowed
+  // ! Currently unused
   getLocationWeatherData() {
-    let lon, lat;
-
-    // Check if has access to user's location
+    // Display weather for the user's current location if permission is granted
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
+      navigator.geolocation.getCurrentPosition(position => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        const api_url = `${BASE_API_URL}&lat=${lat}&lon=${lon}`;
 
-            // ! Proxy just for getting around CORS in dev environment, remove this later
-            const proxy = 'https://cors-anywhere.herokuapp.com/'
-            const api_url = `${proxy}${BASE_API_URL}&lat=${lat}&lon=${lon}`;
-            this.queryAndDisplayWeatherData(api_url);
-        });
+        this.queryAndDisplayWeatherData(api_url);
+      });
     }
   }
 
@@ -97,15 +87,7 @@ export default class WeatherApp extends React.Component {
     });
   }
 
-  updateTemperatureData = (tempFahrenheit, summary, timezone) => {
-    const tempCelsius = convertFahrenheitToCelsius(tempFahrenheit);
-    tempFahrenheit = Math.round(tempFahrenheit);
-    this.setState({ tempFahrenheit, tempCelsius, summary, timezone });
-  }
-
   handleSearch = (searchValues) => {
-    // ! Proxy just for getting around CORS in dev environment, remove this later
-    const proxy = 'https://cors-anywhere.herokuapp.com/'
     const api_url = `${BASE_API_URL}&q=${searchValues.cityValue.trim()},${searchValues.countryValue.trim()}`;
     this.queryAndDisplayWeatherData(api_url);
   }
@@ -164,12 +146,3 @@ export default class WeatherApp extends React.Component {
     );
   }
 }
-
-function convertFahrenheitToCelsius(tempFahrenheit) {
-  return Math.round((tempFahrenheit - 32) * 5 / 9);
-}
-
-//         <></>
-          {/* <Location updateTempData={this.updateTemperatureData} timezone={this.state.timezone} />
-          <TemperatureIcon ref={(ref) => this.tempIcon = ref}/>
-          <Temperature tempFahrenheit={this.state.tempFahrenheit} tempCelsius={this.state.tempCelsius} summary={this.state.summary} /> */}
