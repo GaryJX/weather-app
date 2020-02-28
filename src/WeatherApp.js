@@ -8,7 +8,7 @@ import SearchBar from './components/SearchBar';
 import './assets/css/location.css';
 import WeatherIcon from './components/WeatherIcon';
 
-const API_KEY = 'f4251a7e73d6dfe509cd347b0c34b13b';
+const API_KEY = 'Add your key here';
 const BASE_API_URL = `https://api.openweathermap.org/data/2.5/weather?APPID=${API_KEY}`;
 
 export default class WeatherApp extends React.Component {
